@@ -1,0 +1,198 @@
+$color_1: #FFFFFF;
+$color_2: #0A0A0A;
+$color_3: #0F91D2;
+$font-family_1: 'Nunito', sans-serif;
+$background-color_1: #8DD4F7;
+$background-color_2: #0F91D2;
+$background-color_3: #FFFFFF;
+$background-color_4: rgba(33, 49, 63, .95);
+
+@import "https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap";
+
+/*Nav*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $font-family_1;
+    font-size: 20px;
+}
+
+body {
+    background-color: $background-color_1;
+}
+
+.header {
+    background-color: $background-color_2;
+    display: flex;
+    justify-content: space-between;
+    height: 95px;
+    padding: 5px 10%;
+    align-items: center;
+
+    .logo {
+        cursor: pointer;
+
+        img {
+            height: 90px;
+            width: auto;
+            transition: all 0.3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .nav-links {
+        list-style: none;
+
+        li {
+            display: inline-block;
+            padding: 0 20px;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        a {
+            font-size: 700;
+            color: $color_1;
+
+            &:hover {
+                color: $color_2;
+            }
+        }
+    }
+
+    .btn {
+        button {
+            font-weight: 700;
+            color: $color_3;
+            padding: 9px 25px;
+            background: #FFFFFF;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+
+            &:hover {
+                background-color: $background-color_3;
+                color: $color_2;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .menu {
+        button {
+            font-weight: 700;
+            color: $color_3;
+            padding: 9px 25px;
+            background: #FFFFFF;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+
+            &:hover {
+                background-color: $background-color_3;
+                color: $color_2;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        background-color: $background-color_4;
+        overflow: hidden;
+        transition: all 0.3s ease 0s;
+
+        .overlay-content {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a {
+            padding: 15px;
+            font-size: 36px;
+            display: block;
+            transition: all 0.3s ease 0s;
+            font-weight: 700;
+            color: $color_1;
+
+            &:hover {
+                color: $color_3;
+            }
+
+            &:focus {
+                color: $color_3;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 65px;
+        }
+    }
+}
+
+.overlay {
+    a {
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.menu {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .nav-links {
+        display: none;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    .menu {
+        display: inherit;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .header {
+        .overlay {
+            a {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .header.overlay {
+        .close {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+        }
+    }
+}
